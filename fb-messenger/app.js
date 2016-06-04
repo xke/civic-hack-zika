@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
   res.send('This provides the endpoints for the Civic Hack Zika FB Messenger UI.');
 });
 
-app.get('/fb-messenger-api/webhook/', (req, res) => {
+app.get('/fb-messenger-webhook/', (req, res) => {
   let result = 'Error, wrong validation token';
   if (VERIFY_TOKEN && req.query['hub.verify_token'] === VERIFY_TOKEN) {
     result = req.query['hub.challenge'];
