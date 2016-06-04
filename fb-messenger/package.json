@@ -9,5 +9,8 @@
   "author": "Chris Pesto",
   "dependencies": {
     "express": "^4.13.4"
+  },
+  "engines": {
+    "node": "6.x"
   }
 }
