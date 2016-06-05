@@ -84,7 +84,8 @@ const handleIncomingPostback = (sender, payload) => {
       break;
     case PAYLOADS.TOP_LEVEL_FIND:
       sendButtonsMessage(sender, 'Where is Zika?', [
-        linkButton('Map of cases', 'https://dfranquesa.shinyapps.io/Civic-hack-zika/')
+        linkButton('CDC - Areas with Zika', 'http://www.cdc.gov/zika/geo/'),
+        linkButton('CDC - US Map', 'http://www.cdc.gov/zika/geo/united-states.html')
       ]);
       break;
     case PAYLOADS.TOP_LEVEL_NEWS:
@@ -175,8 +176,8 @@ let server = app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
             template_type: 'generic',
             elements: [{
               title: APP_TITLE,
-              image_url: 'https://z-1-scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/13330963_1732598180346024_' +
-                         '1321225047963306710_n.jpg?oh=fabdc0e38893bb838302268bb52622bc&oe=57D22806',
+              image_url: 'https://z-1-scontent-lax3-1.xx.fbcdn.net/t31.0-8/' +
+                         '13346381_1733027786969730_5969763651097353000_o.jpg',
               subtitle: "Send 'menu' to get options.",
               buttons: topLevelButtons
             }]
