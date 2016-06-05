@@ -3,7 +3,7 @@ library(leaflet)
 
 # Choices for drop-downs
 vars <- c(
-  "Zika Travel-associated cases" = "superzip",
+  "Zika Local-associated cases" = "superzip",
   "Zika Travel-associated cases" = "income",
   "Centile score" = "centile",
   "College education" = "college",
