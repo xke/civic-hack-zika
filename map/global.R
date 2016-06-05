@@ -17,8 +17,8 @@ cleantable <- allzips %>%
     Superzip = superzip,
     Population = adultpop,
     College = college,
-    Income = zikatravel,
-#    Income = income,
+#    Income = zikatravel,
+     Income = income,
 #    ZikaTravel = zikatravel,
     Lat = latitude,
     Long = longitude
