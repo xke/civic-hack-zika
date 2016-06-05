@@ -1,6 +1,6 @@
 library(dplyr)
 
-allzips <- readRDS("data/superzip.rds")
+allzips <- readRDS("data/superzip_1.rds")
 allzips$latitude <- jitter(allzips$latitude)
 allzips$longitude <- jitter(allzips$longitude)
 allzips$college <- allzips$college * 100
@@ -18,6 +18,7 @@ cleantable <- allzips %>%
     Population = adultpop,
     College = college,
     Income = income,
+    ZikaTravel = zikatravel,
     Lat = latitude,
     Long = longitude
   )
