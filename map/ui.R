@@ -3,10 +3,10 @@ library(leaflet)
 
 # Choices for drop-downs
 vars <- c(
-  "Is SuperZIP" = "superzip",
+  "Zika Travel-associated cases" = "superzip",
+  "Zika Travel-associated cases" = "income",
   "Centile score" = "centile",
   "College education" = "college",
-  "Zika Travel-associated cases" = "income",
   "Population" = "adultpop"
 )
 
@@ -35,7 +35,7 @@ shinyUI(navbarPage("Zika", id="nav",
         selectInput("size", "Size", vars, selected = "adultpop"),
         conditionalPanel("input.color == 'superzip' || input.size == 'superzip'",
           # Only prompt for threshold when coloring or sizing by superzip
-          numericInput("threshold", "SuperZIP threshold (top n percentile)", 5)
+          numericInput("threshold", "Zika threshold (top n percentile)", 5)
         ),
 
         plotOutput("histCentile", height = 200),
