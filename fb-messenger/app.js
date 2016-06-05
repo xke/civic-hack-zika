@@ -20,6 +20,8 @@ const PAYLOADS = {
   LEARN_TREAT: 'LEARN_TREAT'
 };
 
+const APP_TITLE = 'Civic Hack Zika';
+
 /*
  * Utility functions
  */
@@ -100,22 +102,23 @@ const handleIncomingPostback = (sender, payload) => {
     case PAYLOADS.LEARN_PREVENT:
       sendTextMessage(sender,
         'No vaccines currently exist to prevent Zika. You can reduce your risks by protecting yourself from ' +
-        'mosquito bites, since virus-infected mosquitoes are the primary way that Zika gets transmitted. Using ' +
-        'insect repellant is one great way to prevent mosquito bites. Clearing up mosquito-breeding sites like ' +
-        'trash or standing water can also be effective.');
+        'mosquito bites, since virus-infected mosquitoes are the primary way that Zika gets transmitted. ' +
+        'Use insect repellant, and clear up mosquito-breeding sites like trash or standing water.');
       break;
     case PAYLOADS.LEARN_TREAT:
       sendTextMessage(sender,
-        'No special medicine currently exists for Zika. You can treat the symptoms by getting plenty of rest and ' +
-        'drinking fluids. Zika usually remains in the blood of an infected person for about a week, but it can be ' +
-        'found longer in some people. An infected person is likely to develop immunity from Zika and be protected ' +
-        'from future infections.');
+        'No special medicine currently exists for Zika. You can treat the symptoms by getting plenty of rest ' +
+        'and drinking fluids. Zika usually remains in the blood of an infected person for about a week. ' +
+        'An infected person is likely to develop immunity from Zika and be protected from future infections.');
       break;
   }
 };
 
 const handleIncomingText = (sender, text) => {
   console.log("Handling incoming text: " + text);
+  if (text == 'menu') {
+    sendButtonsMessage(sender, APP_TITLE, topLevelButtons);
+  }
 };
 
 /*
@@ -171,10 +174,10 @@ let server = app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
           payload: {
             template_type: 'generic',
             elements: [{
-              title: 'Civic Hack Zika',
-              item_url: 'https://dfranquesa.shinyapps.io/Civic-hack-zika/',
-              image_url: 'https://z-1-scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/13330963_1732598180346024_1321225047963306710_n.jpg?oh=fabdc0e38893bb838302268bb52622bc&oe=57D22806',
-              subtitle: 'Learn about Zika, and find out where it is.',
+              title: APP_TITLE,
+              image_url: 'https://z-1-scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/13330963_1732598180346024_' +
+                         '1321225047963306710_n.jpg?oh=fabdc0e38893bb838302268bb52622bc&oe=57D22806',
+              subtitle: "Send 'menu' to get options.",
               buttons: topLevelButtons
             }]
           }
