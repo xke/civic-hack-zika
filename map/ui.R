@@ -6,12 +6,12 @@ vars <- c(
   "Is SuperZIP" = "superzip",
   "Centile score" = "centile",
   "College education" = "college",
-  "Median income" = "income",
+  "Zika Travel-associated cases" = "income",
   "Population" = "adultpop"
 )
 
 
-shinyUI(navbarPage("Superzip", id="nav",
+shinyUI(navbarPage("Zika", id="nav",
 
   tabPanel("Interactive map",
     div(class="outer",
@@ -29,7 +29,7 @@ shinyUI(navbarPage("Superzip", id="nav",
         draggable = TRUE, top = 60, left = "auto", right = 20, bottom = "auto",
         width = 330, height = "auto",
 
-        h2("ZIP explorer"),
+        h2("ZIKA explorer"),
 
         selectInput("color", "Color", vars),
         selectInput("size", "Size", vars, selected = "adultpop"),
