@@ -7,7 +7,8 @@ vars <- c(
   "Centile score" = "centile",
   "College education" = "college",
   "Median income" = "income",
-  "Population" = "adultpop"
+  "Population" = "adultpop",
+  "Zika Travel Associated" = "zikatravel"
 )
 
 
