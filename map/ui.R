@@ -5,8 +5,8 @@ library(leaflet)
 vars <- c(
   "Zika Local-associated cases" = "superzip",
   "Zika Travel-associated cases" = "income",
+  "Zika Sexual-transmitted cases" = "college",
   "Mosquito sites" = "centile",
-  "Sexual transmitted" = "college",
   "Population" = "adultpop"
 )
 
