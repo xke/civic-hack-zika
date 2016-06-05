@@ -84,7 +84,7 @@ const handleIncomingPostback = (sender, payload) => {
       break;
     case PAYLOADS.TOP_LEVEL_FIND:
       sendButtonsMessage(sender, 'Where is Zika?', [
-        linkButton('CDC - Areas with Zika', 'http://www.cdc.gov/zika/geo/'),
+        linkButton('CDC - All Areas', 'http://www.cdc.gov/zika/geo/'),
         linkButton('CDC - US Map', 'http://www.cdc.gov/zika/geo/united-states.html')
       ]);
       break;
